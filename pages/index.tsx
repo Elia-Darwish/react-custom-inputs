@@ -14,7 +14,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Heyflow Challenge</title>
+        <title>React Custom Inputs</title>
       </Head>
 
       <main className={styles.main}>
