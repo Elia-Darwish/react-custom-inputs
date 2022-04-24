@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { useState } from 'react'
 import Head from 'next/head'
 
-import styles from 'styles/home.module.css'
+import styles from 'styles/Home.module.css'
 import { Checkbox } from 'components/Checkbox'
 import { Input } from 'components/Input'
 import { AtIcon } from 'components/icons'
