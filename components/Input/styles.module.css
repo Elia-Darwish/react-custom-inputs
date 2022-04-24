@@ -1,0 +1,117 @@
+.container {
+  --font-size: 1rem;
+  --icon-size: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size);
+
+  padding: 4px 12px;
+
+  border-radius: 4px;
+
+  background-color: hsl(0 0% 94% / 100%);
+}
+
+.container:focus-within {
+  box-shadow: var(--shadow-outline);
+}
+
+.container[data-size="xs"] {
+  --font-size: 0.875rem;
+  --icon-size: 1rem;
+}
+
+.container[data-size="sm"] {
+  --font-size: 1rem;
+  --icon-size: 1.125rem;
+}
+
+.container[data-size="md"] {
+  --font-size: 1.125rem;
+  --icon-size: 1.25rem;
+}
+
+.container[data-size="lg"] {
+  --font-size: 1.25rem;
+  --icon-size: 1.5rem;
+}
+
+.container[data-size="xl"] {
+  --font-size: 1.5rem;
+  --icon-size: 1.75rem;
+}
+
+.icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+
+  margin-right: 8px;
+
+  color: hsl(var(--hsl-gray) / 100%)
+}
+
+.icon > * {
+  width: 100%;
+  height: 100%;
+}
+
+.container:focus-within .icon {
+  color: hsl(var(--hsl-gray-dark) / 100%)
+}
+
+.label {
+  flex-grow: 1;
+}
+
+.placeholder {
+  display: block;
+  width: 100%;
+
+  font-family: inherit;
+  font-size: inherit;
+  
+  color: hsl(var(--hsl-gray-dark) / 100%);
+
+  transform-origin: left center;
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1),
+              color 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+
+  transform: scale(0.8);
+}
+
+.input {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+
+  width: 100%;
+  padding: 0;
+
+  font-family: inherit;
+  font-size: inherit;
+
+  transform-origin: left center;
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+
+  transform: translateY(calc(1em * -0.2));
+}
+
+.input::placeholder {
+  color: transparent;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.container[data-placeholder-shown="true"] .placeholder {
+  transform: translateY(calc(1em * 0.6));
+  color: hsl(var(--hsl-gray) / 100%);
+}
+
+.container[data-placeholder-shown="true"] .input {
+  transform: translateY(calc(1em * -0.6));
+}
